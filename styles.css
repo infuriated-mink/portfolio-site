@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Header Styles */
 .main-header {
     background-color: white;
     height: 130px;
@@ -15,7 +16,8 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; }
+    z-index: 1000; 
+}
 
 .logo-container img {
     height: 80px;
@@ -44,33 +46,26 @@ nav-active a {
     color: #ecdb3f; 
 }
 
-
 nav a:hover {
     color: lightgray; 
 }
 
-.home{
+/* Home Section Styles */
+.home {
     padding-top: 130px; 
     height: 80.6vh;
     display: flex;
     align-items: center;
 }
 
-.about-me{
-    height: 80.6vh;
-    display: flex;
-    align-items: center;
-    background-color: #D9D9D9;
-}
-
-.half-box{
+.half-box {
     background-color: darkgray;
     height: 80.6vh;
     width: 55%;
     justify-self: left;
 }
 
-.photo-box{
+.photo-box {
     background-color: white;
     height: 80.6vh;
     width: 45%;
@@ -143,3 +138,132 @@ nav a:hover {
     color: #ECDB3F;
 }
 
+/* About Me Section Styles */
+.about-me {
+    height: 80.6vh;
+    display: flex;
+    align-items: center;
+    background-color: #D9D9D9;
+}
+
+/* Timeline Section Styles */
+.timeline {
+    padding-top: 130px;
+    height: 80.6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.event {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+/* Add the following styles to create the connecting line */
+.circle:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 2px; /* Adjust the height of the line */
+    width: 100%; /* Adjust the width to cover the spacing */
+    background-color: #ccc; /* Adjust the color of the line */
+    z-index: -1;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ECDB3F;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.event:hover .popup {
+    display: block;
+}
+
+.popup h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Highlight the circle on hover */
+.circle:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-header {
+        height: 100px;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    .half-box h6 {
+        padding-top: 20px;
+        font-size: 24px;
+    }
+
+    .half-box h4 {
+        font-size: 40px;
+    }
+
+    .half-box h5 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header {
+        height: 80px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .half-box h6 {
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    .half-box h4 {
+        font-size: 32px;
+    }
+
+    .half-box h5 {
+        font-size: 18px;
+    }
+}

@@ -1,3 +1,4 @@
+// Home Page
 document.addEventListener("DOMContentLoaded", function() {
     // Replace these values with your desired roles
     const roles = ["Software Developer","Web Developer", "Accountant", "Cybersecurity Enthusiast"];
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 2000); 
 });
 
+// Nav Bar
 document.addEventListener("DOMContentLoaded", function () {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -75,3 +77,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   
+
+  // Education Page
+  document.addEventListener("DOMContentLoaded", function () {
+    const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+        const popup = circle.parentElement.querySelector('.popup');
+
+        circle.addEventListener('click', function () {
+            // Toggle the display of the popup
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        });
+
+        circle.addEventListener('mouseover', function () {
+            // Show the popup when hovering over the circle
+            popup.style.display = 'block';
+        });
+
+        circle.addEventListener('mouseout', function () {
+            // Hide the popup when not hovering over the circle
+            popup.style.display = 'none';
+        });
+    });
+});
