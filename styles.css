@@ -7,7 +7,7 @@ body {
 /* Header Styles */
 .main-header {
     background-color: white;
-    height: 130px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,11 +17,14 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000; 
+    
 }
 
 .logo-container img {
     height: 80px;
 }
+
+
 
 nav ul {
     list-style: none;
@@ -42,10 +45,6 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav-active a {
-    color: #ecdb3f; 
-}
-
 nav a:hover {
     color: lightgray; 
 }
@@ -64,11 +63,12 @@ nav a:hover {
 }
 
 .home {
-    padding-top: 130px;
-    height: 80.6vh;
-    display: flex;
-    align-items: flex-start; 
-}
+        padding-top: 100px; 
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0;
+        height: auto;
+    }
 
 .half-box {
     background-color: darkgray;
@@ -188,8 +188,13 @@ nav a:hover {
 
 /* About Me Section Styles */
 #about {
-    background-color: #f4f4f4;
-    padding: 80px 0;
+    padding-top: 100px; 
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    height: auto;
+    background-color: lightgray;
+    padding-bottom: 50px;
 }
 
 .about-container {
@@ -313,8 +318,13 @@ nav a:hover {
 
 /* Portfolio Section Styles */
 #portfolio {
+    padding-top: 100px; 
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    height: auto;
     background-color: white;
-    padding: 80px 0;
+    padding-bottom: 50px;
 }
 .portfolio-row {
     display: flex;
@@ -339,6 +349,7 @@ nav a:hover {
 .portfolio-card {
     width: 500px; 
     text-align: center;
+    height: 820px;
     margin: 10px;
     padding: 20px;
     border-radius: 8px;
@@ -370,6 +381,10 @@ nav a:hover {
     border-radius: 8px;
 }
 
+.card-bottom {
+    margin-top: auto; 
+}
+
 .more-button {
     display: inline-block;
     margin-top: 10px;
@@ -379,7 +394,7 @@ nav a:hover {
     color: #000;
     text-decoration: none;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
@@ -417,9 +432,14 @@ nav a:hover {
 
 /* Book Section */
 #book {
-    background-color: #f4f4f4;
-    padding: 80px 0;
-    text-align: center; /* Align the content to the center */
+    padding-top: 100px; 
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0;
+    height: auto;
+    background-color: lightgray;
+    padding-bottom: 50px;
+    justify-content: center;
 }
 
 .book-content {
