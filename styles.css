@@ -419,11 +419,19 @@ nav a:hover {
 #book {
     background-color: #f4f4f4;
     padding: 80px 0;
-    height: flex;
+    text-align: center; /* Align the content to the center */
 }
+
+.book-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .book-content h2 {
     font-size: 2.5rem;
     color: #333;
+    margin-bottom: 20px; /* Add margin to separate h2 from the paragraph */
 }
 
 .book-content p {
@@ -431,4 +439,12 @@ nav a:hover {
     color: #555;
     margin-bottom: 30px;
 }
+
+/* Style the calendly container */
+.calendly-inline-widget {
+    width: 100%; 
+    height: 650px;
+}
+
+
 
