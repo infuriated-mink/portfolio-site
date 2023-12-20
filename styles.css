@@ -51,11 +51,23 @@ nav a:hover {
 }
 
 /* Home Section Styles */
-.home {
-    padding-top: 130px; 
-    height: 80.6vh;
+#role-container {
+    padding-top: 5px;
+    height: 40px;
+    overflow: hidden;
     display: flex;
     align-items: center;
+}
+
+#role {
+    margin: 0;
+}
+
+.home {
+    padding-top: 130px;
+    height: 80.6vh;
+    display: flex;
+    align-items: flex-start; 
 }
 
 .half-box {
@@ -63,6 +75,8 @@ nav a:hover {
     height: 80.6vh;
     width: 55%;
     justify-self: left;
+    display: flex;
+    flex-direction: column; 
 }
 
 .photo-box {
@@ -71,6 +85,7 @@ nav a:hover {
     width: 45%;
     justify-self: right;
 }
+
 
 .photo-box img {
     width: 100%;
@@ -114,7 +129,6 @@ nav a:hover {
 
 .buttons-container {
     padding-left: 64px;
-    display: flex;
     margin-top: 10px; 
 }
 
@@ -128,142 +142,293 @@ nav a:hover {
     font-size: 16px;
     background-color: #ECDB3F;
     color: #000;
+    text-decoration: none;
     border: none;
     cursor: pointer;
+    text-align: center;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
 }
 
 .portfolio-button:hover,
 .contact-button:hover {
     background-color: lightgray;
     color: #ECDB3F;
+    box-shadow: 0 0 1rem #ECDB3F;
+}
+.social-media {
+    padding-left: 64px;
+    padding-bottom: 15px;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    background: #ECDB3F; 
+    border-radius: 50%;
+    overflow: hidden; 
+    transition: .5s ease;
+}
+
+.social-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.social-media a:hover {
+    background: var(--second-bg-color); 
+    box-shadow: 0 0 1rem #ECDB3F; 
 }
 
 /* About Me Section Styles */
-.about-me {
-    height: 80.6vh;
-    display: flex;
-    align-items: center;
-    background-color: #D9D9D9;
+#about {
+    background-color: #f4f4f4;
+    padding: 80px 0;
 }
 
-/* Timeline Section Styles */
-.timeline {
-    padding-top: 130px;
-    height: 80.6vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin: 50px auto;
-    position: relative;
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.event {
-    position: relative;
-    flex: 1;
+.about-content {
     text-align: center;
 }
 
-/* Add the following styles to create the connecting line */
-.circle:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    height: 2px; /* Adjust the height of the line */
-    width: 100%; /* Adjust the width to cover the spacing */
-    background-color: #ccc; /* Adjust the color of the line */
-    z-index: -1;
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
 }
 
-.circle {
-    width: 30px;
-    height: 30px;
+.about-content p {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    gap: 2px; 
+    flex-wrap: wrap;
+    margin-top: 30px; /
+}
+
+.flip-card {
+    width: 280px; 
+    height: 300px; 
+    perspective: 1000px;
+    margin: 5px; 
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-front {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.flip-card-back {
+    background-color: #f9f9f9;
+    transform: rotateY(180deg);
+}
+
+.flip-card i {
+    font-size: 5rem;  
+    color: #ECDB3F; 
+}
+
+.flip-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.flip-card p {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.flip-card .details {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: #777;
+}
+
+.download-resume {
+    margin-top: 20px; 
+}
+
+.download-resume a {
+    border-radius:  20px;
+    width: 178px;
+    height: 48px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
     background-color: #ECDB3F;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    color: #000;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease; 
 }
 
-.popup {
-    display: none;
-    position: absolute;
-    background-color: #fff;
+.download-resume a:hover {
+    background-color: lightgray;
+    color: #ECDB3F;
+    box-shadow: 0 0 1rem #ECDB3F;
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    background-color: white;
+    padding: 80px 0;
+}
+.portfolio-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.portfolio-card {
+    width: 500px; 
+    text-align: center;
+    margin: 10px;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.event:hover .popup {
-    display: block;
+.portfolio-card img {
+    max-width: 100%; 
+    height: auto; 
+    max-height: 200px; 
+    border-radius: 8px;
 }
 
-.popup h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.portfolio-card h3 {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: #333;
 }
 
-.popup p {
-    font-size: 14px;
-    line-height: 1.5;
+.portfolio-card p {
+    font-size: 1.4rem;
+    color: #555;
 }
 
-/* Highlight the circle on hover */
-.circle:hover {
-    background-color: #f0f0f0;
+.portfolio-card img {
+    max-width: 100%; 
+    height: auto; 
+    max-height: 350px; 
+    border-radius: 8px;
+}
+
+.more-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ECDB3F;
+    color: #000;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.more-button:hover {
+    background-color: lightgray;
+    color: #ECDB3F;
+    box-shadow: 0 0 1rem #ECDB3F;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.slick-prev, .slick-next {
+    font-size: 24px;
+    color: #ECDB3F;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    color: lightgray;
+}
+
+.slick-center {
+    transform: scale(1.2); 
+    transition: transform 0.5s ease;
 }
 
 
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 768px) {
-    .main-header {
-        height: 100px;
-    }
 
-    nav a {
-        font-size: 20px;
-    }
-
-    .half-box h6 {
-        padding-top: 20px;
-        font-size: 24px;
-    }
-
-    .half-box h4 {
-        font-size: 40px;
-    }
-
-    .half-box h5 {
-        font-size: 24px;
-    }
+/* Book Section */
+#book {
+    background-color: #f4f4f4;
+    padding: 80px 0;
+    height: flex;
+}
+.book-content h2 {
+    font-size: 2.5rem;
+    color: #333;
 }
 
-@media screen and (max-width: 480px) {
-    .main-header {
-        height: 80px;
-    }
-
-    nav a {
-        font-size: 16px;
-    }
-
-    .half-box h6 {
-        padding-top: 10px;
-        font-size: 20px;
-    }
-
-    .half-box h4 {
-        font-size: 32px;
-    }
-
-    .half-box h5 {
-        font-size: 18px;
-    }
+.book-content p {
+    font-size: 1.6rem;
+    color: #555;
+    margin-bottom: 30px;
 }
+

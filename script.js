@@ -1,103 +1,112 @@
 // Home Page
 document.addEventListener("DOMContentLoaded", function() {
-    // Replace these values with your desired roles
-    const roles = ["Software Developer","Web Developer", "Accountant", "Cybersecurity Enthusiast"];
+  // Replace these values with your desired roles
+  const roles = ["Software Developer", "Web Developer", "Accountant", "Cybersecurity Technician", "Data Analyst"];
 
-    // Get the elements by their IDs
-    const nameElement = document.getElementById("name");
-    const roleElement = document.getElementById("role");
+  // Get the elements by their IDs
+  const nameElement = document.getElementById("name");
+  const roleElement = document.getElementById("role");
 
-    // Set an initial role
-    let currentRoleIndex = 0;
-    roleElement.textContent = roles[currentRoleIndex];
+  // Set an initial role
+  let currentRoleIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
 
+  function updateRoleText() {
+      const currentRole = roles[currentRoleIndex];
+      const textToShow = isDeleting ? currentRole.substring(0, currentCharIndex - 1) : currentRole.substring(0, currentCharIndex + 1);
+      const cursor = isDeleting ? "" : "|"; // Add a cursor when typing
+      roleElement.textContent = textToShow + cursor;
 
-    setInterval(function() {
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        roleElement.textContent = roles[currentRoleIndex];
-    }, 2000); 
-});
-
-// Nav Bar
-document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-  
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-  
-        // Remove the 'nav-active' class from all navigation links
-        document.querySelectorAll('nav a').forEach(link => {
-          link.classList.remove('nav-active');
-        });
-  
-        // Add the 'nav-active' class to the clicked navigation link
-        this.classList.add('nav-active');
-      });
-    });
-  
-    // Highlight the current section in the navigation bar on scroll
-    document.addEventListener('scroll', function () {
-      var scrollPosition = window.scrollY;
-  
-      // Remove the 'nav-active' class from all navigation links
-      document.querySelectorAll('nav a').forEach(link => {
-        link.classList.remove('nav-active');
-      });
-  
-      // Add the 'nav-active' class to the appropriate navigation link based on the scroll position
-      document.querySelectorAll('section').forEach(section => {
-        var sectionTop = section.offsetTop - 130; // Adjust for the fixed header height
-        var sectionBottom = sectionTop + section.offsetHeight;
-  
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          document.querySelector('nav a[href="#' + section.id + '"]').classList.add('nav-active');
-        }
-      });
-    });
-  
-    // Highlight the current section on page load
-    document.addEventListener('DOMContentLoaded', highlightCurrentSection);
-  });
-  
-  function highlightCurrentSection() {
-    var scrollPosition = window.scrollY;
-  
-    // Add the 'nav-active' class to the appropriate navigation link based on the scroll position
-    document.querySelectorAll('section').forEach(section => {
-      var sectionTop = section.offsetTop - 130; // Adjust for the fixed header height
-      var sectionBottom = sectionTop + section.offsetHeight;
-  
-      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        document.querySelector('nav a[href="#' + section.id + '"]').classList.add('nav-active');
+      if (!isDeleting && currentCharIndex === currentRole.length) {
+          // Start deleting after a pause
+          isDeleting = true;
+          setTimeout(updateRoleText, 1000);
+      } else if (isDeleting && currentCharIndex === 0) {
+          // Move to the next role after deleting
+          isDeleting = false;
+          currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+          setTimeout(updateRoleText, 500);
+      } else {
+          // Continue typing or deleting
+          isDeleting ? currentCharIndex-- : currentCharIndex++;
+          setTimeout(updateRoleText, isDeleting ? 50 : 150);
       }
-    });
   }
-  
 
-  // Education Page
-  document.addEventListener("DOMContentLoaded", function () {
-    const circles = document.querySelectorAll('.circle');
-
-    circles.forEach(circle => {
-        const popup = circle.parentElement.querySelector('.popup');
-
-        circle.addEventListener('click', function () {
-            // Toggle the display of the popup
-            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-        });
-
-        circle.addEventListener('mouseover', function () {
-            // Show the popup when hovering over the circle
-            popup.style.display = 'block';
-        });
-
-        circle.addEventListener('mouseout', function () {
-            // Hide the popup when not hovering over the circle
-            popup.style.display = 'none';
-        });
-    });
+  // Initial call to start the typing effect
+  updateRoleText();
 });
+
+
+// About
+document.addEventListener('DOMContentLoaded', function () {
+  var contactButton = document.getElementById("contactMeButton");
+  var contactForm = document.getElementById("contactMeForm");
+
+  contactButton.addEventListener("click", function () {
+      // Hide the contact button
+      contactButton.style.display = "none";
+      // Display the contact form
+      contactForm.style.display = "block";
+  });
+});
+
+// Portfolio Sectione
+document.addEventListener('DOMContentLoaded', function () {
+  $('#carousel1').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    centerPadding: '60px',
+    centerClass: 'center-slide'
+});
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  $('#carousel2').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    centerPadding: '60px',
+    centerClass: 'center-slide'
+});
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  $('#carousel3').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    centerPadding: '60px',
+    centerClass: 'center-slide'
+});
+}); 
+
+document.addEventListener('DOMContentLoaded', function () {
+  $('#carousel4').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    centerPadding: '60px',
+    centerClass: 'center-slide'
+});
+});
+// Book Me
+function openCalendly() {
+  Calendly.initPopupWidget({ url: 'https://calendly.com/vanessa-rice/book-a-meeting' });
+  return false;
+} 
+
