@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function updateRoleText() {
       const currentRole = roles[currentRoleIndex];
       const textToShow = isDeleting ? currentRole.substring(0, currentCharIndex - 1) : currentRole.substring(0, currentCharIndex + 1);
-      const cursor = isDeleting ? "" : "|"; // Add a cursor when typing
+      const cursor = isDeleting ? "" : "|"; 
       roleElement.textContent = textToShow + cursor;
 
       if (!isDeleting && currentCharIndex === currentRole.length) {

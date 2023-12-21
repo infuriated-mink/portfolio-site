@@ -221,7 +221,7 @@ nav a:hover {
     display: flex;
     gap: 2px; 
     flex-wrap: wrap;
-    margin-top: 30px; /
+    margin-top: 30px; 
 }
 
 .flip-card {
@@ -236,6 +236,7 @@ nav a:hover {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.5s;
+    justify-content: center;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -255,7 +256,7 @@ nav a:hover {
 }
 
 .flip-card-front {
-    background-color: lightgray;
+    background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
